@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TeX Editor</title>
+    <!-- Building Blocks -->
+    <link rel="stylesheet" type="text/css" href="building-blocks/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="building-blocks/headers.css" />
+    <link rel="stylesheet" type="text/css" href="building-blocks/icons/settings_icons.css" />
+    <link rel="stylesheet" type="text/css" href="building-blocks/input_areas.css" />
+    <link rel="stylesheet" type="text/css" href="building-blocks/lists.css" />
+    <link rel="stylesheet" type="text/css" href="building-blocks/util.css" />
+
+    <!-- App -->
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+
+    <!-- App -->
+    <script src="js/app.js"></script>
+</head>
+
+<body role="application" id="list-view">
+    <section role="region" id="main">
+        <header>
+            <a id="btn-help"><span class="icon settings-icon help">help</span></a>
+            <h1 style='float:left;'>Editor</h1>
+            <menu type="toolbar">
+                <a id="btn-open">Open</a>
+                <a id="btn-save">Save</a>
+                <a id="btn-preview">Preview</a>
+            </menu>
+        </header>
+        <article class="scrollable">
+            <textarea id='tex-input'></textarea>
+        </article>
+    </section>
+    <section role="region" id="preview">
+        <header>
+            <button id='btn-preview-close'><span class="icon icon-close">close</span>
+            </button>
+            <menu type="toolbar">
+            </menu>
+            <h1 style='float:left;'>Preview</h1>
+        </header>
+        <article class="scrollable">
+            <div id='tex-preview' style="margin:5px;">
+            </div>
+        </article>
+    </section>
+    <section role="region" id="help">
+        <header>
+            <button id='btn-help-close'><span class="icon icon-close">close</span>
+            </button>
+            <h1 style='float:left;'>Help</h1>
+        </header>
+        <article class="scrollable">
+            <p>TeX Editor is a very basic (La)TeX editor app with a native conversor from a subset of (La)TeX to HTML.</p>
+            <p>If you like this app please considere support <a href="https://wiki.mozilla.org/MathML:Home_Page">Mozilla MathML
+            Project</a> and the team that work on it.</a>
+                <h2>Features</h2>
+                <ul>
+                    <li>Text editor</li>
+                    <li>HTML preview</li>
+                    <li>Save file</li>
+                    <li>Open file</li>
+                </ul>
+                <h2>(La)TeX Subset Support</h2>
+                <ul>
+                    <li>Paragraphs</li>
+                    <li>Inline math mode</li>
+                    <li>Display math mode</li>
+                    <li>Math TeX expressions</li>
+                    <li>Math TeX environments</li>
+                </ul>
+        </article>
+    </section>
+    <section data-type="list" role="region" id="file-browser">
+        <header class="fixed">
+            <button id='btn-file-browser-close'><span class="icon icon-close">close</span>
+            </button>
+            <h1 style='float:left;'>Open File</h1>
+        </header>
+        <article class="scrollable">
+            <div id='file-browser-div'>
+            </div>
+        </article>
+    </section>
+    <script src="js/setup.js"></script>
+</body>
+
+</html>

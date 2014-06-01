@@ -1,0 +1,32 @@
+{
+  "version": "0.0.0-alpha",
+  "name": "TeX Editor",
+  "description": "Basic text editor for (La)TeX",
+  "locales": {
+    "en-US": {
+      "name": "TeX Editor",
+      "description": "Basic text editor for (La)TeX"
+    }
+  },
+  "developer": {
+    "name": "Raniere Silva",
+    "url": "https://github.com/r-gaia-cs/TeXEditor"
+  },
+  "launch_path": "/index.html",
+  "type": "privileged",
+  "permissions": {
+    "device-storage:sdcard": {
+      "description": "Required to can save and load (La)TeX files.",
+      "access": "readwrite"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "32": "/icons/TeXEditor-32.png",
+    "60": "/icons/TeXEditor-60.png",
+    "90": "/icons/TeXEditor-90.png",
+    "120": "/icons/TeXEditor-120.png",
+    "128": "/icons/TeXEditor-128.png",
+    "256": "/icons/TeXEditor-256.png"
+  }
+}
