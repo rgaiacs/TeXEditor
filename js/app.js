@@ -1,9 +1,22 @@
 /* Generate preview of current (La)TeX source code. */
 function preview() {
-    var text = document.getElementById("tex-input");
     var preview_div = document.getElementById("tex-preview");
 
-    preview_div.innerHTML = text.value;
+    // Remove old preview
+    while (preview_div.hasChildNodes()) {
+        preview_div.removeChild(preview_div.lastChild);
+    }
+
+    // Get text and split paragraphs
+    var text = document.getElementById("tex-input");
+    var paragraphs = text.value.split('\n\n');
+
+    // Parse paragraphs
+    for(var i = 0; i < paragraphs.length; i++) {
+      var html_paragraphs = document.createElement("p");
+      html_paragraphs.innerHTML = TeXZilla.filterString(paragraphs[i]);
+      preview_div.appendChild(html_paragraphs);
+    }
 }
 
 /* Save current (La)TeX source code. */
