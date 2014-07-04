@@ -8,17 +8,21 @@
     <link rel="stylesheet" type="text/css" href="building-blocks/buttons.css" />
     <link rel="stylesheet" type="text/css" href="building-blocks/headers.css" />
     <link rel="stylesheet" type="text/css" href="building-blocks/icons/settings_icons.css" />
-    <link rel="stylesheet" type="text/css" href="building-blocks/input_areas.css" />
     <link rel="stylesheet" type="text/css" href="building-blocks/lists.css" />
-    <link rel="stylesheet" type="text/css" href="building-blocks/util.css" />
 
-    <!-- App -->
+    <!-- Transitions -->
+    <link rel="stylesheet" href="building-blocks/transitions.css">
+
+    <!-- Util CSS: some extra tricks -->
+    <link rel="stylesheet" href="building-blocks/util.css">
+
+    <!-- App CSS -->
     <link rel="stylesheet" type="text/css" href="css/app.css" />
 
     <!-- TeXZilla -->
     <script src="TeXZilla/TeXZilla.js"></script>
 
-    <!-- App -->
+    <!-- App Javascript -->
     <script src="js/app.js"></script>
 </head>
 
@@ -26,7 +30,7 @@
     <section role="region" id="main">
         <header>
             <a id="btn-help"><span class="icon settings-icon help">help</span></a>
-            <h1 style='float:left;'>Editor</h1>
+            <h1>Editor</h1>
             <menu type="toolbar">
                 <a id="btn-open">Open</a>
                 <a id="btn-save">Save</a>
@@ -43,10 +47,10 @@
             </button>
             <menu type="toolbar">
             </menu>
-            <h1 style='float:left;'>Preview</h1>
+            <h1>Preview</h1>
         </header>
         <article class="scrollable">
-            <div id='tex-preview' style="margin:5px;">
+            <div id='tex-preview'>
             </div>
         </article>
     </section>
@@ -54,7 +58,7 @@
         <header>
             <button id='btn-help-close'><span class="icon icon-close">close</span>
             </button>
-            <h1 style='float:left;'>Help</h1>
+            <h1>Help</h1>
         </header>
         <article class="scrollable">
             <p>TeX Editor is a very basic (La)TeX editor app with a native conversor from a subset of (La)TeX to HTML.</p>
@@ -81,7 +85,7 @@
         <header class="fixed">
             <button id='btn-file-browser-close'><span class="icon icon-close">close</span>
             </button>
-            <h1 style='float:left;'>Open File</h1>
+            <h1>Open File</h1>
         </header>
         <article class="scrollable">
             <div id='file-browser-div'>
