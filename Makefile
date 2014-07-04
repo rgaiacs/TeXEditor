@@ -1,7 +1,12 @@
+## ############################### Variables ################################
+
 # Software Definitions
 
 LINT=jshint
+## SVG2PNG  : program to convert SVG to PNG
 SVG2PNG=convert
+## TeXZilla : the name of TeXZilla file
+TeXZilla = js/TeXZilla.js
 
 # Package Variables
 
@@ -16,8 +21,10 @@ PACKAGELIST = building-blocks \
 
 ICONS = $(foreach size, 32 60 90 120 128 256, icons/$(PACKAGENAME)-$(size).png)
 
-# main rules
+## 
+## ################################ Commands ################################
 
+## help     : print this text
 help:
 	@grep -e '^##' Makefile | sed 's/## //'
 
@@ -28,7 +35,7 @@ beautify:
 	find js -name '*.js' -type f -exec js-beautify -r -f {} \;
 
 ## build    : build some files need for this webapp
-build: ${ICONS}
+build: ${ICONS} ${TeXZilla}
 
 ## lint     : lint Javascript files
 lint :
@@ -44,6 +51,10 @@ cleanall:
 	rm -f $(PACKAGENAME)
 
 # Auxiliar rules
+
+${TeXZilla}:
+	wget https://raw.githubusercontent.com/fred-wang/TeXZilla/TeXZilla-0.9.7/TeXZilla.js \
+	    -O ${TeXZilla}
 
 icons/%.png: icons/$(PACKAGENAME).svg
 	$(SVG2PNG) -density 512 -background none $< -resize $(subst icons/$(PACKAGENAME)-,,$(basename $@)) $@
